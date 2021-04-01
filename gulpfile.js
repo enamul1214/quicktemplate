@@ -17,7 +17,7 @@ const scssTask = () => {
 
 // Javascript Task
 const jsTask = () => {
-    return src(['src/vendors/js/**/*.js','src/js/custom-script.js'])
+    return src(['src/plugins/js/**/*.js','src/js/custom-script.js'])
         .pipe(plumber())
         .pipe(concat('bundle.js'))
         .pipe(dest('assets/js'))
@@ -31,7 +31,7 @@ const iconsTask = () => {
 
 // Vendor CSS Task
 const vendorCssTask = () => {
-    return src('src/vendors/css/**/*.css')
+    return src('src/plugins/css/**/*.css')
         .pipe(plumber())
         .pipe(concat('bundle.css'))
         .pipe(dest('assets/css'))
@@ -52,7 +52,6 @@ const minifyJsTask = () => {
       return src('assets/js/**/*.js')
           .pipe(plumber())
           .pipe(minify())
-        //   .pipe(rename({suffix: '.min'}))
           .pipe(dest('assets/js'));
   }
 
@@ -75,7 +74,7 @@ const browsersyncReload = (cb) => {
 // Watch Task
 const watchTask = () => {
     watch(['*.html', '*.php'], browsersyncReload);
-    watch(['src/vendors/css/**/*.css','src/sass/**/*.scss','src/js/**/*.js'], series(vendorCssTask, iconsTask, scssTask, jsTask, browsersyncReload));
+    watch(['src/plugins/css/**/*.css','src/sass/**/*.scss','src/js/**/*.js'], series(vendorCssTask, iconsTask, scssTask, jsTask, browsersyncReload));
 }
 
 // Default Gulp Task
