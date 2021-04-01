@@ -1,0 +1,32 @@
+/*
+Theme Name: Html Quick Pack With Gulp 4, Browser Sync, Bootstrap 4.6 and Font Awesome 5
+Author: Enamul Kabir
+Author URI: 
+Theme URI: https://github.com/enamul1214/quicktemplate
+Front End Developer: Enamul Kabir
+Back End Developer: Enamul Kabir
+Project Start: 01-04-2021
+Date: 01-04-2021
+*/
+@import "node_modules/bootstrap/scss/functions";
+@import "theme/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// Font Awesome
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
+
+
+// Any additional imported files //
+@import "theme/header";
+@import "theme/front-page";
+@import "theme/pages-post";
+@import "theme/elements";
+@import "theme/widgets";
+@import "theme/footer";
+@import "theme/utility";
+@import "theme/plugin-override";
+@import "theme/responsive";
