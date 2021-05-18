@@ -1,5 +1,5 @@
 # Gulp Quick Template 
-Html Quick Pack With Gulp 4, Browser Sync, Bootstrap 4.6 and Font Awesome 5.
+Html Quick Pack With Gulp 4, Browser Sync, Bootstrap 5 and Font Awesome 5.
 !!! enjoy !!!!
 
 # Project run command
