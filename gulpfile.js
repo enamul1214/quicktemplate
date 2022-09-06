@@ -3,6 +3,7 @@ const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
 const cssnano = require('cssnano');
 const plumber = require('gulp-plumber');
+const php = require('gulp-connect-php');
 const concat = require('gulp-concat');
 const minify = require('gulp-minify');
 const browsersync = require('browser-sync').create();
@@ -55,12 +56,20 @@ const minifyJsTask = () => {
           .pipe(dest('assets/js'));
   }
 
+
+
 // Browser sync Tasks
 const browsersyncServe = (cb) => {
+    php.server({
+        base: '.',
+        port: 3006,
+        keepalive: true,
+    });
+
     browsersync.init({
-        server: {
-            baseDir: '.'
-        }
+        proxy: "localhost:3006",
+        baseDir: "./",
+        notify: false,
     });
     cb();
 }
@@ -69,6 +78,10 @@ const browsersyncServe = (cb) => {
 const browsersyncReload = (cb) => {
     browsersync.reload();
     cb();
+}
+
+const  watchPhp = () => {
+    watch(['./**/*.html', './**/*.php']).on('change', browsersyncReload);
 }
 
 // Watch Task
@@ -84,7 +97,8 @@ exports.default = series (
     iconsTask,
     jsTask,
     browsersyncServe,
-    watchTask
+    watchTask,
+    watchPhp
 );
 
 // Build Gulp Task
