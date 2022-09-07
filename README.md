@@ -15,7 +15,7 @@ gulp build
 
 
 # FYI: 
-Before start this project you must run this command 'npm i gulp-cli' and 'npm i gulp -g'
+Before start this project you must run this command 'npm i gulp-cli' and 'npm i gulp -g'. Also you must run the local server and change the project directory url based on your requirement on the gulpfile.js file. Then run "gulp" commend.
 
 # plugins folder purpose
 If you want to add plugins then you need to put your plugins css and js files in the plugins folder.  
