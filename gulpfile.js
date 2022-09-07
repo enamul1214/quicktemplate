@@ -61,13 +61,15 @@ const minifyJsTask = () => {
 // Browser sync Tasks
 const browsersyncServe = (cb) => {
     php.server({
-        base: '.',
+        // change base url as per your project location
+        base: 'http://localhost/quicktemplate/',
         port: 3006,
         keepalive: true,
     });
 
     browsersync.init({
-        proxy: "localhost:3006",
+        // change proxy url as per your project location
+        proxy: "http://localhost/quicktemplate/",
         baseDir: "./",
         notify: false,
     });
