@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="container text-center pt-80">
+    <div class="container text-center pt-5">
         <h1>Welcome</h1>
         <p>It's a combined package of Gulp 4, bootstrap 5 and font awesome!! <i class="fas fa-dove"></i></p>
         <p>Now you can enjoy this package with php/html files.</p>
